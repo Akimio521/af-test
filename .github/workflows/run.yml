@@ -38,7 +38,8 @@ jobs:
         echo "test" >> ./media/test.txt
         zip -r AutoFilm.zip ./media/ 
       
-    - name: 发布
-      uses: softprops/action-gh-release@v2
+    - name: 上传文件
+      uses: actions/upload-artifact@main
       with:
-        files: AutoFilm.zip
+        name: AutoFilm.zip
+        path: AutoFilm.zip
