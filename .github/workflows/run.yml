@@ -36,10 +36,9 @@ jobs:
         mkdir media
         touch media/test.txt
         echo "test" >> ./media/test.txt
-        zip -r AutoFilm.zip ./media/ 
       
     - name: 上传文件
       uses: actions/upload-artifact@main
       with:
         name: AutoFilm.zip
-        path: AutoFilm.zip
+        path: media/
