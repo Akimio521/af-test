@@ -4,33 +4,22 @@
 # 说明文档
 详情见[AutoFilm说明文档](https://blog.akimio.top/posts/1031/)
 
-# 部署方式
-1. Python环境运行
-    ```bash
-    python main.py
-    ```
-2. Docker运行
-    ```bash
-    docker run --name autofilm -d -v ./config:/app/config -v ./media:/app/media -e INTERVAL=3600 akimio/autofilm
-    ```
-
 # 优点
 - [x] 轻量化Emby服务器，降低Emby服务器的性能需求以及硬盘需求
 - [x] 运行稳定
 - [x] 相比直接访问Webdav，Emby、Jellyfin服务器可以提供更好的视频搜索功能以及自带刮削器，以及多设备同步播放进度
-- [x] ~~提高访问速度，播放速度不受Jellyfin服务器带宽限制~~(新版Jellyfin对Strm文件的播放策略有所改变，似乎已经不再不受限制，有待确认)
+- [x] 提高访问速度，播放速度不受Jellyfin服务器带宽限制
 
 # TODO LIST
 - [x] 从config文件中读取多个参数
 - [x] 优化程序运行效率（多线程处理）
-- [x] 增加Docker镜像
-- [x] Strm模式/媒体库模式
+- [ ] 增加Docker镜像
+- [ ] Strm模式/媒体库模式
 - [ ] 监控模式
 - [ ] 对接TMDB实现分类、重命名、刮削等功能
 
 # 更新日志
-- 2024.5.29：v1.0.2，优化运行逻辑，Docker部署，自动打包Docker镜像
-- 2024.2.1：v1.0.0，完全重构AutoFilm，不再兼容v0.1，实现多线程，大幅度提升任务处理速度
+- 2024.2.1： v1.0.0，完全重构AutoFilm，不再兼容v0.1，实现多线程，大幅度提升任务处理速度
 - 2024.1.28：v0.1.1，初始版本持续迭代
 
 # 开源许可证
