@@ -9,7 +9,7 @@ on:
         default: 'main'
 
 jobs:
-  AutoFilm:
+  Runer:
     runs-on: ubuntu-latest
     steps:
     - name: 下载仓库
@@ -22,23 +22,23 @@ jobs:
       with:
         python-version: '3.x'
 
-    # - name: 安装依赖
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install -r requirements.txt
-
-    # - name: 运行AutoFilm-actions程序
-    #   run: |
-    #     python main.py
-        
-    - name: 打包输出文件
+    - name: 安装依赖
       run: |
-        mkdir media
-        touch media/test.txt
-        echo "test" >> ./media/test.txt
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: 运行AutoFilm-actions程序
+      run: |
+        python main.py
+        
+    # - name: 打包输出文件
+    #   run: |
+    #     mkdir media
+    #     touch media/test.txt
+    #     echo "test" >> ./media/test.txt
       
     - name: 上传文件
       uses: actions/upload-artifact@main
       with:
-        name: AutoFilm.zip
+        name: AutoFilm
         path: media/
