@@ -38,7 +38,7 @@ jobs:
         echo "test" >> ./media/test.txt
         zip -r AutoFilm.zip ./media/ 
       
-        - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: AutoFilm.zip
+    - name: 发布
+      uses: softprops/action-gh-release@v2
+      with:
+        files: AutoFilm.zip
