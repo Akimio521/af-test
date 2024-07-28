@@ -1,4 +1,4 @@
-name: AutoFilm Workflow DEV
+name: AutoFilm Workflow RUN
 
 on:
   workflow_dispatch:
@@ -36,16 +36,9 @@ jobs:
         mkdir media
         touch media/test.txt
         echo "test" >> ./media/test.txt
-        zip -r AutoFilm-$(date +%Y-%m-%d).zip ./media/ 
+        zip -r AutoFilm.zip ./media/ 
       
-    - name: 创建并发布Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: Emby扫库文件
-        name: AutoFilm-$(date +%Y-%m-%d)
-        body: TODO New Release.
-        draft: false
-        prerelease: false
-        files: |
-          AutoFilm-$(date +%Y-%m-%d).zip
-          LICENSE 
+        - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AutoFilm.zip
