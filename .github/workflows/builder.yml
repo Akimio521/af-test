@@ -33,6 +33,7 @@ jobs:
         
     - name: 打包输出文件
       run: |
+        touch media/test.txt
         echo "test" >> ./media/test.txt
         zip -r AutoFilm-$(date +%Y-%m-%d).zip ./media/ 
       
